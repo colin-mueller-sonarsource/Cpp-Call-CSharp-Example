@@ -19,15 +19,12 @@ A Visual Studio 2015 example of calling C# COM library from C++ code.
 6. Set the "output path" to the location you want
 7. Save all changes
 
-### C++ Project Settings
+### C++ Project Settings (optional)
 1. Open "Properties" dialog of your C++ project
-2. At the general page, change "Common Language Runtime Support" option to "Common Language Runtime Support (/clr)"
+2. At the property dialog, locate C/C++ -> General and open the "Additional Include Directories" setting dialog
 
-   ![Common Language Runtime Support (/clr)](Assets/5.png)  
-3. Open the "Additional Include Directories" setting dialog
-
-   ![Open the "Additional Include Directories" setting dialog](Assets/6.png) 
+   ![Open the "Additional Include Directories" setting dialog](Assets/5.png) 
 4. Add the output path of your C# library project into the additional include directories of your C++ project
 
-   ![Add output path](Assets/7.png)  
+   ![Add output path](Assets/6.png)  
 5. Save all changes
