@@ -39,6 +39,7 @@ namespace CSharpLibrary
             }
             catch (Exception e)
             {
+                Console.WriteLine(number);
                 Console.WriteLine(e.Message);
             }
 

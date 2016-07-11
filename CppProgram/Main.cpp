@@ -3,13 +3,11 @@
 #import "CSharpLibrary.tlb" raw_interfaces_only
 
 using namespace CSharpLibrary;
-using namespace System;
-using namespace System::Runtime::InteropServices;
 
 int main()
 {
 	// Initialize COM.
-	HRESULT hr = CoInitialize(NULL);
+	HRESULT hr = CoInitialize(nullptr);
 
 	// Create the interface pointer.
 	ICalculator *calculator = nullptr;
@@ -33,14 +31,15 @@ int main()
 	calculator->Divide(10, 5, &result);
 	std::cout << "10 / 5 = " << result << std::endl;
 
-	// Passing string to C# code
-	IntPtr stringPointer = Marshal::StringToBSTR("100");
+	// Passing string to COM C# library
 
-	BSTR str = static_cast<BSTR>(stringPointer.ToPointer());
-	calculator->ToNumber(str, &result);
+	// This is more appropriate:
+	// BSTR number = _bstr_t("100");
+	// calculator->ToNumber(number, &result);
+
+	// This is shorter
+	calculator->ToNumber(_bstr_t("100"), &result);
 	std::cout << "Convert string \"100\" to number: " << result << std::endl;
-
-	Marshal::FreeBSTR(stringPointer);
 
 	system("pause");
 
