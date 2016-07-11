@@ -6,6 +6,6 @@
         int Minus(int a, int b);
         int Multiply(int a, int b);
         int Divide(int a, int b);
-        void PrintNumber(int number);
+        int ToNumber(string number);
     }
 }
