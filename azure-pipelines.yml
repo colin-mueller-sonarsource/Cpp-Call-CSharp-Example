@@ -40,7 +40,6 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir bw-output MSBuild.exe Cpp-Call-CSharp-Example.sln /t:Rebuild '
-
+    script: 'build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir bw-output dotnet build'
 
 - task: SonarCloudAnalyze@1
