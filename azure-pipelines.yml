@@ -40,6 +40,6 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir bw-output dotnet build'
+    script: 'build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir bw-output C:\Program Files (x86)\Microsoft Visual Studio\2017\MSBuild\15.0\Bin\msbuild.exe /t:rebuild'
 
 - task: SonarCloudAnalyze@1
