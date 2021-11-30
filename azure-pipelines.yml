@@ -37,8 +37,10 @@ steps:
     projectName: 'CPPMix'
     extraProperties: 'sonar.cfamily.build-wrapper-output=bw-output'
 
-- task: CmdLine@2
+- task: PowerShell@2
   inputs:
-    script: './build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir bw-output MSBuild.exe /t:Rebuild'
+    targetType: 'inline'
+    script: 'build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir bw-output MSBuild.exe /t:Rebuild'
+
 
 - task: SonarCloudAnalyze@1
